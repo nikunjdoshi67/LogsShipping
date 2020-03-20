@@ -26,16 +26,22 @@ filebeat.inputs:
   # Paths that should be crawled and fetched. Glob based paths.
   paths:
     - /var/log/*
-    - /var/log/containers/*/*log
-    - /var/log/containers/nova*/*log
-    - /var/log/containers/glance*/*log
-    - /var/log/containers/cinder*/*log
-    - /var/log/containers/keystone/*/*log
-    - /var/log/containers/neutron/*/*log 
-    - /var/log/apache2/*/*log
-    - /var/log/syslog
-    - /var/log/libvirt/libvirtd.log
-    - /var/log/cinder/cinder-volume.log
+    - /var/log/messages/
+    - /var/log/openswitch/*.log
+    - var\log\/(.\/.\/.*log)  
+
+
+
+      # - /var/log/containers/*/*log
+      # - /var/log/containers/nova*/*log
+      #- /var/log/containers/glance*/*log
+      #- /var/log/containers/cinder*/*log
+      #- /var/log/containers/keystone/*/*log
+      #- /var/log/containers/neutron/*/*log 
+      #- /var/log/apache2/*/*log
+      #- /var/log/syslog
+      #- /var/log/libvirt/libvirtd.log
+      #- /var/log/cinder/cinder-volume.log
 
     #- c:\programdata\elasticsearch\logs\*
 
